@@ -8,7 +8,17 @@ Feature: Click on the next button on step 1
     #*              b. Test by providing only the required fields
     
 
-    #TODO: Create scenarios that cover all the acceptance criteria
-
     Background:
         Given user is on the enrollment page
+
+    @sep19-1
+    Scenario: Continue to Step 2 after completing all personal details
+        When user completes all personal details on step 1
+        And user clicks the next button on step 1
+        Then the payment plan options are displayed on step 2
+
+    @sep19-2
+    Scenario: Continue to Step 2 after completing only required personal details
+        When user completes the required personal details on step 1
+        And user clicks the next button on step 1
+        Then the payment plan options are displayed on step 2
